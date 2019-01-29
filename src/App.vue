@@ -12,7 +12,7 @@ export default {
     return {
         message: "Hello",
         color: "white",
-        link: "https://www.google.com"
+        link: "https://www.google.com",
     }
   },
   methods: {

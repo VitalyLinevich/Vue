@@ -1,6 +1,8 @@
 <template>
-  <div id="app" v-bind:class="color">
-    <p v-on:click="change"><a :href="link">{{message}}</a></p>
+  <div id="app">
+    <ul>
+      <li v-for="item in message">{{item}}</li>
+    </ul>
     <input type="text" v-model="message"/>
   </div>
 </template>
@@ -10,31 +12,25 @@ export default {
   name: 'app',
     data () {
     return {
-        message: "Hello",
-        color: "white",
-        link: "https://www.google.com",
+        message: ""
     }
   },
   methods: {
-    change() {
-        if (this.color === "white") {
-            return this.color = "green"
-        } else {
-            return this.color = "white";
-        }
+
+  },
+  computed: {
+    test: function () {
+        return this.message.split(',');
+    }
+  },
+  watch: {
+    "message": function () {
+      
     }
   }
 }
 </script>
 
 <style>
-  .green {
-    background-color: green;
-  }
-  .red {
-    background-color: red;
-  }
-  .white {
-    background-color: white;
-  }
+
 </style>
